@@ -1,19 +1,9 @@
-
 const Discord = require('discord.js');
-
-// Create an instance of a Discord client
 const client = new Discord.Client();
-
-// The token of your bot - https://discordapp.com/developers/applications/me
-const token = 'you fucking nigger crymemore';
-
-// The ready event is vital, it means that your bot will only start reacting to information
-// from Discord _after_ ready is emitted
+const token = 'token';
 client.on('ready', () => {
   console.log('Bot is running');
 });
-
-// Create an event listener for messages
 client.on('message', message => {
 	if (message.channel.name === 'bots') {
 		if (message.author.bot) return;
@@ -30,8 +20,7 @@ client.on('message', message => {
 		if (message.content === '!help') {
 			message.channel.send('Use !google for googling stuff');
 		}
+		//todo: add more stuff dumbass
 	}
 });
-
-// Log our bot in
 client.login(token);
