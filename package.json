@@ -1,7 +1,6 @@
 {
   "name": "myapp",
   "description": "a really cool app",
-  "version": "1.0.0",
   "main": "bot.js"
   "engines": {
     "node": "8.11.3",
