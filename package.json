@@ -1,10 +1,9 @@
 {
-  "name": "myapp",
+  "name": "Terrabot",
   "description": "a really cool app",
-  "main": "bot.js"
-  "engines" {
-    "node": "8.11.3",
-    "npm": "5.6.0"
+  "version": "1.0.0",
+  "engines": {
+    "node": "8.11.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,25 +11,5 @@
   },
   "dependencies": {
     "discord.js": "^11.3.2"
-  },
-  "main": "bot.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-	"start" "node bot.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Terradice/Tzlils-multiuse-bot.git"
-  },
-    "keywords": [
-    "heroku",
-    "discord.js"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Terradice/Tzlils-multiuse-bot/issues"
-  },
-  "homepage": "https://github.com/Terradice/Tzlils-multiuse-bot#readme"
+  }
 }
