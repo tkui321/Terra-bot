@@ -2,7 +2,7 @@
   "name": "myapp",
   "description": "a really cool app",
   "main": "bot.js"
-  "engines": {
+  "engines" {
     "node": "8.11.3",
     "npm": "5.6.0"
   },
