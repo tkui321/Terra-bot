@@ -19,12 +19,12 @@ client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.startsWith(prefix + "google")) {
-			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(msg => {msg.delete(1000)});
+			message.channel.send("<a:googling:426453223310622740>" + " Loading...");
 			var lookup = message.content.replace(";google ", '');
 			var newlookup = "https://www.google.com/search?source=hp&ei=mFopW5aMIomSsAfRw77IDg&q=test";
 			newlookup = newlookup.replace('test',lookup);
 			newlookup = newlookup.replace(/\s+/g, '+')
-			setTimeout(700);
+			setTimeout(700,  msg.delete(1000));
 			message.channel.send(newlookup);
 		}
 		if (message.content.startsWith(prefix + "test")) {
