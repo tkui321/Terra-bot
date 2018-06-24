@@ -19,7 +19,7 @@ client.on('message', message => {
 	if (message.channel.name === 'bots' || message.channel.name === 'פקודות-בוטים') {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
-		if (message.content.startsWith(prefix + "google")) {
+		if (message.content.toLowerCase().startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", '');
 			var newlookup = "https://www.google.com/search?source=hp&ei=mFopW5aMIomSsAfRw77IDg&q=test";
 			newlookup = newlookup.replace('test',lookup);
