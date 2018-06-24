@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const google = require('google');
 const client = new Discord.Client();
-const token = 'TOKEN';
+const { TOKEN } = process.env;
 var knock = true;
 var jokeover = true;
 var laugh = false;
@@ -92,4 +92,4 @@ client.on('message', message => {
 		}
 	} else return;
 });
-client.login(token);
+client.login(TOKEN);
