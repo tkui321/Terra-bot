@@ -6,6 +6,7 @@ var knock = true;
 var jokeover = true;
 var laugh = false;
 var prefix = ";"
+var timeoutID;
 client.on('ready', () => {
   console.log('Bot is running');
   //client.user.setActivity({game: {name: "Terradice#7561|;help", type: 1}});
@@ -19,12 +20,11 @@ client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.startsWith(prefix + "google")) {
-			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(m => m.delete)
 			var lookup = message.content.replace(";google ", '');
 			var newlookup = "https://www.google.com/search?source=hp&ei=mFopW5aMIomSsAfRw77IDg&q=test";
 			newlookup = newlookup.replace('test',lookup);
 			newlookup = newlookup.replace(/\s+/g, '+')
-			message.channel.send(newlookup);
+			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(m => setTimeout(m.edit(newlookup), 700);
 		}
 		if (message.content.startsWith(prefix + "test")) {
 			message.channel.send('Working ');
