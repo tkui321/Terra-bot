@@ -6,6 +6,10 @@ var knock = true;
 var jokeover = true;
 var laugh = false;
 var prefix = ";"
+nst PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Bot is running on port ${ PORT }`);
+});
 client.on('ready', () => {
   console.log('Bot is running');
   //client.user.setActivity({game: {name: "Terradice#7561|;help", type: 1}});
