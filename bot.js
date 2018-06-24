@@ -28,7 +28,7 @@ client.on('message', message => {
  			google(lookup, (err, res) => {
 				if (err) console.error(err);
 				else {
-					let url = res.links[res.start].link; //you can also use .href instead of .link
+					let url = res.links[res.start].href; //you can also use .href instead of .link
 					if (url != null) {
 						msg.edit(url);
 					} else {
