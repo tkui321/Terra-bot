@@ -25,16 +25,14 @@ client.on('message', message => {
 			newlookup = newlookup.replace('test',lookup);
 			newlookup = newlookup.replace(/\s+/g, '+')
 			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(r => {
- 				 setTimeout(function(){
-     				google(lookup, (err, res) => {
-   					 if (err) console.error(err);
-   					 else {
-     					 let url = res.links[res.start].link; //you can also use .href instead of .link
-     					 r.edit(url);
- 				    }
-				});
-				}, 2000);
-				});
+ 			google(lookup, (err, res) => {
+				if (err) console.error(err);
+				else {
+					let url = res.links[res.start].link; //you can also use .href instead of .link
+					msg.edit(url);
+					}
+			});
+			});
 		}
 		if (message.content.startsWith(prefix + "test")) {
 			message.channel.send('Working ');
