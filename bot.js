@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const google = require('google');
 const client = new Discord.Client();
-const token = '';
+const token = 'NDU5NzgyMzQ3OTM2NjI4NzQ3.Dg7Nbw.6xuO-ECDYOf7eUlCKB8JCNCV92s';
 var knock = true;
 var jokeover = true;
 var laugh = false;
