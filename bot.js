@@ -24,7 +24,8 @@ client.on('message', message => {
 			var newlookup = "https://www.google.com/search?source=hp&ei=mFopW5aMIomSsAfRw77IDg&q=test";
 			newlookup = newlookup.replace('test',lookup);
 			newlookup = newlookup.replace(/\s+/g, '+')
-			message.channel.edit(newlookup);
+			message.delete();
+			message.channel.send(newlookup);
 		}
 		if (message.content.startsWith(prefix + "test")) {
 			message.channel.send('Working ');
