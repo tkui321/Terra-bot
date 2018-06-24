@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const google = require('google');
 const client = new Discord.Client();
-const token = 'NDU5NzgyMzQ3OTM2NjI4NzQ3.Dg7Nbw.6xuO-ECDYOf7eUlCKB8JCNCV92s';
+const token = '';
 var knock = true;
 var jokeover = true;
 var laugh = false;
@@ -29,7 +29,11 @@ client.on('message', message => {
 				if (err) console.error(err);
 				else {
 					let url = res.links[res.start].link; //you can also use .href instead of .link
-					msg.edit(url);
+					if (url != null) {
+						msg.edit(url);
+					} else {
+						msg.edit("error");
+					}
 					}
 			});
 			});
