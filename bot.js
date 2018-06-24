@@ -1,5 +1,6 @@
 
 const Discord = require('discord.js');
+const google = require('google');
 const client = new Discord.Client();
 const token = 'NDU5NzgyMzQ3OTM2NjI4NzQ3.Dg7Nbw.6xuO-ECDYOf7eUlCKB8JCNCV92s';
 var knock = true;
@@ -25,7 +26,13 @@ client.on('message', message => {
 			newlookup = newlookup.replace(/\s+/g, '+')
 			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(r => {
  				 setTimeout(function(){
-     				r.edit(newlookup);
+     				google(lookup, (err, res) => {
+   					 if (err) console.error(err);
+   					 else {
+     					 let url = res.links[res.start].link; //you can also use .href instead of .link
+     					 r.edit(url);
+ 				    }
+				});
 				}, 2000);
 				});
 		}
@@ -35,7 +42,7 @@ client.on('message', message => {
 		if (message.content.startsWith(prefix + "help")) {
 			client.users.get(message.author.id).send('Use ;google for googling stuff');
 			client.users.get(message.author.id).send('Use ;code to see my code');
-			client.users.get(message.author.id).send('Use ;uptime to see how long i have been updateCommands');
+			client.users.get(message.author.id).send('Use ;uptime to see how long i have been up');
 			client.users.get(message.author.id).send('Use ;leave for me to gtfo');
 			message.channel.send(message.author + " Check DM's");
 		}
