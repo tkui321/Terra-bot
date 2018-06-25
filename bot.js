@@ -22,7 +22,7 @@ client.on('message', message => {
 				var pidor = message.content.replace(";eval ", "");
 				//const pidor= snipped.split(' ').slice(1).join(' ');
 				console.log(eval(pidor))
- 				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```js" + eval(pidor) + "```")
+ 				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
