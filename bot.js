@@ -59,6 +59,7 @@ client.on('message', message => {
 			client.users.get(message.author.id).send('Use ;google for googling stuff');
 			client.users.get(message.author.id).send('Use ;code to see my code');
 			client.users.get(message.author.id).send('Use ;uptime to see how long i have been up');
+			client.users.get(message.author.id).send('Use ;kick to kick other members (Admin only)');
 			client.users.get(message.author.id).send('More will be added in the future, contact the creator for questions');
 			message.channel.send(message.author + " Check DM's");
 		}
