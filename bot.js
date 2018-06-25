@@ -47,6 +47,7 @@ client.on('message', message => {
 		if (command.startsWith(prefix + "kick")) {
 			let caller = message.guild.members.get(message.author.id);
 			let has_kick = caller.hasPermission("KICK_MEMBERS");
+			console.log(has_kick);
 			if(message.author.has_kick !== message.member.hasPermission("KICK_MEMBERS")) return;
     			if(message.author.id !== "244111430956089344") return message.reply("Sorry, you don't have permissions to use this!");
     			let member = message.mentions.members.first() || message.guild.members.get(args[0]);
