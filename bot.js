@@ -17,6 +17,16 @@ function byefaggots() {
 client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
+		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
+			if (message.author.id === 244111430956089344) {
+				var snipped = message.replace(";eval " "");
+				const pidor= snipped.content.split(' ').slice(1).join(' ');
+ 				   message.channel.send(
+					`\`\`\`js
+					${eval(pidor)}
+					\`\`\``);
+			} else message.channel.send("Unauthorized eval!");
+		}
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
 			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(msg => {
