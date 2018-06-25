@@ -19,8 +19,8 @@ client.on('message', message => {
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344") return;
-				var snipped = message.replace(";eval ", "");
-				const pidor= snipped.content.split(' ').slice(1).join(' ');
+				var snipped = message.content.replace(";eval ", "");
+				const pidor= snipped.split(' ').slice(1).join(' ');
  				   message.channel.send(
 					`\`\`\`js
 					${eval(pidor)}
