@@ -16,7 +16,6 @@ function byefaggots() {
     window.stop();
 }
 client.on('message', message => {
-	if (message.channel.name === 'bots' || message.channel.name === 'פקודות-בוטים') {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
@@ -66,7 +65,6 @@ client.on('message', message => {
 			client.users.get("244111430956089344").send("i left.. " );
 			setTimeout(byefaggots, 3000)
 		}
-	}
 	if (message.channel.name === 'jokes') {
 		if (!jokeover) jokeover = false;
 		if (message.author.bot) return;
