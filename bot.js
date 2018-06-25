@@ -18,7 +18,7 @@ client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
-			if (message.author.id === 244111430956089344) {
+			if(message.author.id !== "244111430956089344") return;
 				var snipped = message.replace(";eval ", "");
 				const pidor= snipped.content.split(' ').slice(1).join(' ');
  				   message.channel.send(
@@ -26,7 +26,6 @@ client.on('message', message => {
 					`\`\`\`js
 					${eval(pidor)}
 					\`\`\``);
-			} else message.channel.send("Unauthorized eval!");
 		}
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
