@@ -47,17 +47,14 @@ client.on('message', message => {
 		if (command.startsWith(prefix + "kick")) {
     			if(message.author.id !== "244111430956089344") return message.reply("Sorry, you don't have permissions to use this!");
     			let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    			if(!member)
-      			return message.reply("Please mention a valid member of this server");
-    			if(!member.kickable) 
-      			return message.reply("I cannot kick this user");
-    			let reason = args.slice(1).join(' ');
+    			if(!member) return message.reply("Please mention a valid member of this server");
+    			if(!member.kickable) return message.reply("I cannot kick this user");
+    				let reason = args.slice(1).join(' ');
     			if(!reason) reason = "No reason provided";
     			member.kick(reason)
       			.catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     			message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
  		 }
-		}
 		if (command.startsWith(prefix + "help")) {
 			client.users.get(message.author.id).send('Use ;google for googling stuff');
 			client.users.get(message.author.id).send('Use ;code to see my code');
