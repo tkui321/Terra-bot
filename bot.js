@@ -19,10 +19,7 @@ client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
-			var lookup = message.content.replace(";google ", '');
-			var newlookup = "https://www.google.com/search?source=hp&ei=mFopW5aMIomSsAfRw77IDg&q=test";
-			newlookup = newlookup.replace('test',lookup);
-			newlookup = newlookup.replace(/\s+/g, '+')
+			var lookup = message.content.replace(";google ", "");
 			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(msg => {
  			google(lookup, (err, res) => {
 				if (err) console.error(err);
