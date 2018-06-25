@@ -23,6 +23,7 @@ client.on('message', message => {
 				//const pidor= snipped.split(' ').slice(1).join(' ');
 				console.log(eval(pidor))
  				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```js" + eval(pidor) + "```")
+		}
 		if (message.content.toLowerCase().startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
 			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(msg => {
