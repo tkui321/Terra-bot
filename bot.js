@@ -21,7 +21,7 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344") return;
 				var snipped = message.content.replace(";eval ", "");
 				const pidor= snipped.split(' ').slice(1).join(' ');
-			console.log(eval(pidor))
+			console.log(pidor)
  				   message.channel.send(
 					`\`\`\`js
 					${eval(pidor)}
