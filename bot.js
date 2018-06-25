@@ -22,7 +22,6 @@ client.on('message', message => {
 				var snipped = message.replace(";eval ", "");
 				const pidor= snipped.content.split(' ').slice(1).join(' ');
  				   message.channel.send(
-					"Awnser: \n"
 					`\`\`\`js
 					${eval(pidor)}
 					\`\`\``);
