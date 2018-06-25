@@ -49,7 +49,7 @@ client.on('message', message => {
 		if (message.content.toLowerCase().startsWith(prefix + "uptime")) {
 			const embed = new Discord.RichEmbed()
 		.setColor(530118)
-		.setFooter("Terrabot operating in " + ${client.guils.size} + " Servers", 'https://cdn.discordapp.com/embed/avatars/4.png')
+		.setFooter(`Terrabot operating in ${client.guilds.size} servers`, 'https://cdn.discordapp.com/embed/avatars/4.png')
 		.setAuthor("Uptime", client.user.avatarURL)
 		.addField("Hours",Math.round(client.uptime / (1000 * 60 * 60)), true )
 		.addField("Minutes", Math.round(client.uptime / (1000 * 60)) % 60, true);
