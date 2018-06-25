@@ -8,7 +8,7 @@ var jokeover = true;
 var laugh = false;
 var prefix = ";"
 client.on('ready', () => {
-  console.log(`Bots is ready and working in ${bot.guilds.size} servers with ${bot.users.size} users!`);
+  console.log(`Bots is ready and working in ${client.guilds.size} servers with ${client.users.size} users!`);
   client.user.setActivity("Terradice#7561|;help");
 });
 function byefaggots() {
