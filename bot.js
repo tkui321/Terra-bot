@@ -20,11 +20,10 @@ client.on('message', message => {
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344") return;
-				error = false;
+				var error = false;
 				var pidor = message.content.replace(";eval ", "");
-				if (eval(pidor) == undefined) var error = true;
-				if (error) return message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Syntax error!" + "```")
- 				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
+				if (eval(pidor) == undefined) message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Syntax error!" + "```"); return;
+ 				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
 		if (command.startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
