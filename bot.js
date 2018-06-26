@@ -45,7 +45,7 @@ client.on('message', message => {
 			message.channel.send('Working ');
 		}
 		if (command.startsWith(prefix + "ping")) {
-			message.channel.send("Bot ping is: " + new Date().getTime() - message.createdTimestamp + " ms");
+			message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
 		}
 		if (command.startsWith(prefix + "kick")) {
 			let caller = message.guild.members.get(message.author.id);
@@ -93,7 +93,7 @@ client.on('message', message => {
 		if (!jokeover) jokeover = false;
 		if (message.author.bot) return;
 		if (knock) {
-			if (command === 'knock knock') {
+			if (message.content === 'knock knock') {
 				message.channel.send('Whos there? ');
 				knock = false;
 				jokeover = false;
