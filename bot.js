@@ -69,10 +69,11 @@ client.on('message', message => {
 			var uptimehelp = "Use ;uptime to see how long i have been up \n";
 			var pinghelp = "Use ;ping to see your ping to the bot \n";
 			var idhelp = "Use ;id to see your user id \n";
+			var randomhelp = "Use ;dice to generate a random number between 1-6";
 			var kickhelp = "Use ;kick to kick other members (Admin only) \n";
 			var morehelp = "More will be added in the future, contact the creator for questions";
 			var concat = googlehelp.concat(codehelp.concat(uptimehelp.concat(pinghelp.concat(idhelp.concat(kickhelp.concat(morehelp))))));
-			client.users.get(message.author.id).send(cocat);
+			client.users.get(message.author.id).send(concat);
 			message.channel.send(message.author + " Check DM's");
 		}
 		if (command.startsWith(prefix + "code")) {
