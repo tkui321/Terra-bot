@@ -52,7 +52,6 @@ client.on('message', message => {
 		if (command.startsWith(prefix + "kick")) {
 			let caller = message.guild.members.get(message.author.id);
 			let has_kick = caller.hasPermission("KICK_MEMBERS");
-			console.log(has_kick);
     			if(!has_kick) return message.reply("Sorry, you don't have permissions to use this!");
     			let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     			if(!member) return message.reply("Please mention a valid member of this server");
