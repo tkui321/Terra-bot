@@ -21,15 +21,13 @@ client.on('message', message => {
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344") return;
 				var pidor = message.content.replace(";eval ", "");
-				//const pidor= snipped.split(' ').slice(1).join(' ');
 				try {
-    					eval(code); 
+    					eval(pidor); 
 				} catch (e) {
    					 if (e instanceof SyntaxError) {
        					var error = true;
     					}
 				}
-//console.log(eval(pidor))
 				if (error) return message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Syntax error!" + "```")
  				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
