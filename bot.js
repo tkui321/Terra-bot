@@ -60,11 +60,12 @@ client.on('message', message => {
     			message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
  		 }
 		if (command.startsWith(prefix + "help")) {
-			client.users.get(message.author.id).send("Use ;google for googling stuff \n
-								 Use ;code to see my code \n 
-								 Use ;uptime to see how long i have been up \n 
-								 Use ;kick to kick other members (Admin only) \n 
-								More will be added in the future, contact the creator for questions");
+			var googlehelp = "Use ;google for googling stuff \n";
+			var codehelp =  "Use ;code to see my code \n";
+			var uptimehelp = "Use ;uptime to see how long i have been up \n";
+			var kickhelp = "Use ;kick to kick other members (Admin only) \n";
+			var morehelp = "More will be added in the future, contact the creator for questions";
+			client.users.get(message.author.id).send(googlehelp.concat(codehelp.concat(uptimehelp.concat(kickhelp.concat(morehelp)))));
 			message.channel.send(message.author + " Check DM's");
 		}
 		if (command.startsWith(prefix + "code")) {
