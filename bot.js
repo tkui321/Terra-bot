@@ -22,7 +22,15 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344") return;
 				var pidor = message.content.replace(";eval ", "");
 				//const pidor= snipped.split(' ').slice(1).join(' ');
-				console.log(eval(pidor))
+				try {
+    					eval(code); 
+				} catch (e) {
+   					 if (e instanceof SyntaxError) {
+       					var error = true;
+    					}
+				}
+//console.log(eval(pidor))
+				if (error) return message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Syntax error!" + "```")
  				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
 		if (command.startsWith(prefix + "google")) {
