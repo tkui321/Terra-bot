@@ -19,7 +19,7 @@ client.on('message', message => {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
-			if(message.author.id !== "244111430956089344" && message.author.id !== "461121942481797120") return;
+			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content.replace(";eval ", "");
 				if (eval(pidor) == undefined) return console.log("UNDEFINED!");
