@@ -116,4 +116,4 @@ client.on('message', message => {
 		}
 	} else return;
 });
-client.login(process.env);
+client.login(process.env.TOKEN);
