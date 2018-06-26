@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 const google = require('google');
 const client = new Discord.Client();
-const { TOKEN } = process.env;
 var knock = true;
 var jokeover = true;
 var laugh = false;
@@ -25,7 +24,7 @@ client.on('message', message => {
 				try {
  				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 				} catch(e) {
-					message.channel.send("Function: ```" + pidor + "```\n" + "Error! stacktrace:\n" + "```" + e + "```")
+					message.channel.send("Function: ```" + pidor + "```\n" + "Result:\n" + "```" + e + "```")
 				}
 		}
 		if (command.startsWith(prefix + "google")) {
@@ -117,4 +116,4 @@ client.on('message', message => {
 		}
 	} else return;
 });
-client.login(TOKEN);
+client.login(process.env);
