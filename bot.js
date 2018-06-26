@@ -76,6 +76,9 @@ client.on('message', message => {
 		if (command.startsWith(prefix + "code")) {
 			message.channel.send('https://github.com/Terradice/Tzlils-multiuse-bot');
 		}
+		if (command.startsWith(prefix + "id")) {
+			message.channel.send("ID: `" message.author.id + "`");
+		}
 		if (command.startsWith(prefix + "uptime")) {
 			const embed = new Discord.RichEmbed()
 		.setColor(530118)
