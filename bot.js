@@ -67,9 +67,11 @@ client.on('message', message => {
 			var googlehelp = "Use ;google for googling stuff \n";
 			var codehelp =  "Use ;code to see my code \n";
 			var uptimehelp = "Use ;uptime to see how long i have been up \n";
+			var pinghelp = "Use ;ping to see your ping to the bot \n";
+			var idhelp = "Use ;id to see your user id \n";
 			var kickhelp = "Use ;kick to kick other members (Admin only) \n";
 			var morehelp = "More will be added in the future, contact the creator for questions";
-			client.users.get(message.author.id).send(googlehelp.concat(codehelp.concat(uptimehelp.concat(kickhelp.concat(morehelp)))));
+			client.users.get(message.author.id).send(googlehelp.concat(codehelp.concat(uptimehelp.concat(pinghelp.concat(idhelp.concat(kickhelp.concat(morehelp)))))));
 			message.channel.send(message.author + " Check DM's");
 		}
 		if (command.startsWith(prefix + "code")) {
