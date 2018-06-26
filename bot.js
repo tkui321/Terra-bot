@@ -64,8 +64,7 @@ client.on('message', message => {
 								 Use ;code to see my code \n 
 								 Use ;uptime to see how long i have been up \n 
 								 Use ;kick to kick other members (Admin only) \n 
-								More will be added in the future, contact the creator for questions`);
-								");
+								More will be added in the future, contact the creator for questions");
 			message.channel.send(message.author + " Check DM's");
 		}
 		if (command.startsWith(prefix + "code")) {
