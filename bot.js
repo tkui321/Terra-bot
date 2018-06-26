@@ -45,7 +45,7 @@ client.on('message', message => {
 			message.channel.send('Working ');
 		}
 		if (command.startsWith(prefix + "ping")) {
-			message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
+			message.channel.send("Bot ping is: " + new Date().getTime() - message.createdTimestamp + " ms");
 		}
 		if (command.startsWith(prefix + "kick")) {
 			let caller = message.guild.members.get(message.author.id);
