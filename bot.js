@@ -22,7 +22,7 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content.replace(";eval ", "");
-				if (eval(pidor) == undefined) return console.log("UNDEFINED!");
+				if (eval(pidor) == undefined) message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Error!" + "```"); return;
  				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
 		if (command.startsWith(prefix + "google")) {
