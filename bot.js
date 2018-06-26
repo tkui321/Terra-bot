@@ -82,8 +82,8 @@ client.on('message', message => {
 		if (command.startsWith(prefix + "id")) {
 			message.channel.send(`ID:  ${message.author.id}`);
 		}
-		if (command.startsWith(prefix + "random")) {
-			message.channel.send(Math.floor(Math.random()*(900-0+1)+0))
+		if (command.startsWith(prefix + "dice")) {
+			message.channel.send(Math.floor(Math.random()*(6-1+1)+1))
 		}
 		if (command.startsWith(prefix + "uptime")) {
 			const embed = new Discord.RichEmbed()
