@@ -20,14 +20,9 @@ client.on('message', message => {
 		if (!message.content.startsWith(prefix)) return;
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344") return;
+				error = false;
 				var pidor = message.content.replace(";eval ", "");
-				try {
-    					eval(pidor); 
-				} catch (e) {
-   					 if (e instanceof SyntaxError) {
-       					var error = true;
-    					}
-				}
+				if (eval(pidor) == undefined) var error = true;
 				if (error) return message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Syntax error!" + "```")
  				   message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 		}
