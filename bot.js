@@ -71,7 +71,7 @@ client.on('message', message => {
 			var idhelp = "Use ;id to see your user id \n";
 			var kickhelp = "Use ;kick to kick other members (Admin only) \n";
 			var morehelp = "More will be added in the future, contact the creator for questions";
-			var concat = googlehelp.concat(codehelp.concat(uptimehelp.concat(pinghelp.concat(idhelp.concat(kickhelp.concat(morehelp)))))));
+			var concat = googlehelp.concat(codehelp.concat(uptimehelp.concat(pinghelp.concat(idhelp.concat(kickhelp.concat(morehelp))))));
 			client.users.get(message.author.id).send(cocat);
 			message.channel.send(message.author + " Check DM's");
 		}
@@ -80,6 +80,9 @@ client.on('message', message => {
 		}
 		if (command.startsWith(prefix + "id")) {
 			message.channel.send(`ID:  ${message.author.id}`);
+		}
+		if (command.startsWith(prefix + "random")) {
+			message.channel.send(Math.floor(Math.random()*(900-0+1)+0))
 		}
 		if (command.startsWith(prefix + "uptime")) {
 			const embed = new Discord.RichEmbed()
