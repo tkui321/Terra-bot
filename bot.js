@@ -22,8 +22,11 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content.replace(";eval ", "");
-				if (eval(pidor) == undefined) message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + "Error!" + "```"); return;
+				try {
  				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
+				} catch(e) {
+					"Function: ```" + pidor + "```\n" + "Error! stacktrace:\n" + "```" + e + "```"
+				}
 		}
 		if (command.startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
