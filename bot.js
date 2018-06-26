@@ -25,7 +25,7 @@ client.on('message', message => {
 				try {
  				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 				} catch(e) {
-					"Function: ```" + pidor + "```\n" + "Error! stacktrace:\n" + "```" + e + "```"
+					message.channel.send("Function: ```" + pidor + "```\n" + "Error! stacktrace:\n" + "```" + e + "```")
 				}
 		}
 		if (command.startsWith(prefix + "google")) {
