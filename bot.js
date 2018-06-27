@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 const google = require('google');
+const fs = require("fs");
 const config = require("./config.json");
 const client = new Discord.Client();
 var knock = true;
@@ -18,7 +19,7 @@ client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
-		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
+		if (command.startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content;
@@ -49,6 +50,10 @@ client.on('message', message => {
 					message.channel.send(embed);
 				} else message.channel.send("Function: ```" + pidor + "```\n" + "Result:\n" + "```" + e + "```");
 				}
+		}
+		if(command.equals(prefix + "eval_embed_toggle")) {
+			updateConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
+			message.channel.send("Toggling Eval Embed Response!");
 		}
 		if (command.startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
@@ -148,4 +153,13 @@ client.on('message', message => {
 		}
 	} else return;
 });
+
+function updateConfigEntry(key, value) {
+	config[key] = value;
+	fs.writeFile("./config.json", JSON.stringify(config), function (err) {
+	 if (err) return console.log(err);
+	  console.log(JSON.stringify(config));
+	  console.log('writing to ' + "./config.json");
+});
+}
 client.login(process.env.TOKEN);
