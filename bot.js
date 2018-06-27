@@ -1,7 +1,6 @@
 
 const Discord = require('discord.js');
 const google = require('google');
-const fs = require("fs");
 const config = require("./config.json");
 const client = new Discord.Client();
 var knock = true;
@@ -19,20 +18,11 @@ client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
-		if(command === (prefix + "eval_embed_toggle")) {
-			updateConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
-			message.channel.send("Toggling Eval Embed Response!");
-		}
-		else if (command.startsWith(prefix + "eval")) {
+		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
-				var pidor = message.content;
-				/*Run on everything in config.commands.cmd_eval.replace
-					which contains arrays of [from, to] replaces
-				*/
-				for(var entry of config.commands.cmd_eval.replace) {
-					pidor = pidor.replace(entry[0], entry[1]);
-				}
+				var pidor = message.content.replace(";eval ", "");
+				pidor = pidor.replace("\n", "");
 				try {
 				if(config.commands.cmd_eval.embed) {
 					const embed = new Discord.RichEmbed()
@@ -72,6 +62,9 @@ client.on('message', message => {
 			});
 		}
 		if (command.startsWith(prefix + "test")) {
+			message.channel.send('Working ');
+		}
+		if (command.startsWith(prefix + "embed")) {
 			message.channel.send('Working ');
 		}
 		if (command.startsWith(prefix + "ping")) {
@@ -153,13 +146,4 @@ client.on('message', message => {
 		}
 	} else return;
 });
-
-function updateConfigEntry(key, value) {
-	config[key] = value;
-	fs.writeFile("./config.json", JSON.stringify(config), function (err) {
-	 if (err) return console.log(err);
-	  console.log(JSON.stringify(config));
-	  console.log('writing to ' + "./config.json");
-});
-}
 client.login(process.env.TOKEN);
