@@ -15,6 +15,10 @@ client.on('ready', () => {
 function byefaggots() {
     window.stop();
 }
+bot.on('guildMemberAdd', member => {
+       member.send(`Welcome to the server, ${member}!`);
+       console.log(`${member.user.username} has joined`);
+});
 client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
