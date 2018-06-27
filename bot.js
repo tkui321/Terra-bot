@@ -36,8 +36,8 @@ client.on('message', message => {
 					.setColor(530118)
 					.setFooter(`Terrabot operating in ${client.guilds.size} servers`)
 					.setAuthor("Evaluate", client.user.avatarURL)
-					.addField("Function", pidor, True)
-					.addField("Result", e, True)
+					.addField("Function", pidor, true)
+					.addField("Result", e, true)
 				message.channel.send(embed);
 				}
 		}
