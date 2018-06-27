@@ -24,9 +24,21 @@ client.on('message', message => {
 				var pidor = message.content.replace(";eval ", "");
 				pidor = pidor.replace("\n", "");
 				try {
- 				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
+					const embed = new Discord.RichEmbed()
+					.setColor(530118)
+					setFooter(`Terrabot operating in ${client.guilds.size} servers`)
+					.setAuthor("Evaluate", client.user.avatarURL)
+					.addField("Function, pidor, True)
+					.addField("Result", eval(pidor), True)
+				message.channel.send(embed);
 				} catch(e) {
-					message.channel.send("Function: ```" + pidor + "```\n" + "Result:\n" + "```" + e + "```")
+					const embed = new Discord.RichEmbed()
+					.setColor(530118)
+					setFooter(`Terrabot operating in ${client.guilds.size} servers`)
+					.setAuthor("Evaluate", client.user.avatarURL)
+					.addField("Function, pidor, True)
+					.addField("Result", e, True)
+				message.channel.send(embed);
 				}
 		}
 		if (command.startsWith(prefix + "google")) {
