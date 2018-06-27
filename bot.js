@@ -21,8 +21,13 @@ client.on('message', message => {
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
-				var pidor = message.content.replace(";eval ", "");
-				pidor = pidor.replace("\n", "");
+				var pidor = message.content;
+				/*Run on everything in config.commands.cmd_eval.replace
+					which contains arrays of [from, to] replaces
+				*/
+				for(var entry of config.commands.cmd_eval.replace) {
+					pidor = pidor.replace(entry[0], entry[1]);
+				}
 				try {
 				if(config.commands.cmd_eval.embed) {
 					const embed = new Discord.RichEmbed()
