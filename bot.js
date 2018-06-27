@@ -34,7 +34,7 @@ client.on('message', message => {
 				} catch(e) {
 					const embed = new Discord.RichEmbed()
 					.setColor(530118)
-					setFooter(`Terrabot operating in ${client.guilds.size} servers`)
+					.setFooter(`Terrabot operating in ${client.guilds.size} servers`)
 					.setAuthor("Evaluate", client.user.avatarURL)
 					.addField("Function", pidor, True)
 					.addField("Result", e, True)
