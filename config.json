@@ -5,7 +5,7 @@
       "replace": [
         [";eval", ""],
         ["\n", ""],
-		    ["print(", "message.channel.send("]
+      	["print(", "message.channel.send("]
       ]
     }
   }
