@@ -18,6 +18,10 @@ client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
+		if (command === prefix + "eval_toggle_embed") {
+			setConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
+			message.channel.send("Toggled embed mode for eval");
+		}
 		if (message.content.toLowerCase().startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
@@ -146,4 +150,14 @@ client.on('message', message => {
 		}
 	} else return;
 });
+
+function setConfigEntry(key, value) {
+	config[key] = value;
+
+	fs.writeFile("./config", JSON.stringify(config), function (err) {
+	if (err) return console.log(err);
+	console.log(JSON.stringify(config));
+	console.log('writing to ' + "./config");
+});
+}
 client.login(process.env.TOKEN);
