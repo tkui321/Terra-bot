@@ -87,6 +87,7 @@ client.on('message', message => {
     			if(!reason) reason = "No reason provided";
     			member.kick(reason)
       			.catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+			member.send(`You have been kicked from ${message.guild.name} by ${message.author.tag} for reason: ${reason}`);
     			message.channel.send(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
  		 }
 		if (command.startsWith(prefix + "help")) {
