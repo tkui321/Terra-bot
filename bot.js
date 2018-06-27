@@ -89,8 +89,9 @@ client.on('message', message => {
     				let reason = message.content.replace(";kick ", "");
 				reason = reason.replace(member, "");
     			if(!reason) reason = "No reason provided";
-			member.send(`You have been kicked from ${message.guild.name} by ${message.author.tag} for reason: ${reason}`);
+			member.send(`You have been kicked from ${message.guild.name} by ${message.author.tag} for reason: ${reason}`).then(member => {
     			member.kick(reason)
+			});
       			.catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     			message.channel.send(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
  		 }
