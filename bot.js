@@ -15,7 +15,7 @@ client.on('ready', () => {
 function byefaggots() {
     window.stop();
 }
-bot.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
        member.send(`Welcome to the server, ${member}!`);
        console.log(`${member.user.username} has joined`);
 });
