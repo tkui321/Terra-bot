@@ -21,6 +21,7 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content.replace(";eval ", "");
+				pidor = pidor.replace("\n", "");
 				try {
  				 message.channel.send("Function: ```" + pidor + "``` \n" + "Result: ```" + eval(pidor) + "```")
 				} catch(e) {
