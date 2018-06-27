@@ -19,7 +19,11 @@ client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
-		if (command.startsWith(prefix + "eval")) {
+		if(command.equals(prefix + "eval_embed_toggle")) {
+			updateConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
+			message.channel.send("Toggling Eval Embed Response!");
+		}
+		else if (command.startsWith(prefix + "eval")) {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content;
@@ -50,10 +54,6 @@ client.on('message', message => {
 					message.channel.send(embed);
 				} else message.channel.send("Function: ```" + pidor + "```\n" + "Result:\n" + "```" + e + "```");
 				}
-		}
-		if(command.equals(prefix + "eval_embed_toggle")) {
-			updateConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
-			message.channel.send("Toggling Eval Embed Response!");
 		}
 		if (command.startsWith(prefix + "google")) {
 			var lookup = message.content.replace(";google ", "");
