@@ -19,7 +19,7 @@ client.on('message', message => {
 		var command = message.content.toLowerCase();
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return;
-		if(command.equals(prefix + "eval_embed_toggle")) {
+		if(command === (prefix + "eval_embed_toggle")) {
 			updateConfigEntry("commands.cmd_eval.embed", !config.commands.cmd_eval.embed);
 			message.channel.send("Toggling Eval Embed Response!");
 		}
