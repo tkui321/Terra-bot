@@ -31,6 +31,7 @@ client.on('message', message => {
 			if(message.author.id !== "244111430956089344" && message.author.id !== "263995600641589248") return;
 				var error = false;
 				var pidor = message.content;
+				if(pidor == (";eval")) message.channel.send("You need to specify a function!"); return;
 				for(var entry of config.commands.cmd_eval.replace) {
 					pidor = pidor.replace(entry[0], entry[1]);
 				}
