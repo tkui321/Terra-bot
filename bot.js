@@ -108,7 +108,7 @@ client.on('message', message => {
 			message.channel.send(message.author + " Check DM's");
 		}
 		if (command.startsWith(prefix + "code")) {
-			message.channel.send('https://github.com/Terradice/Tzlils-multiuse-bot');
+			message.channel.send('https://github.com/Terradice/Terra-bot');
 		}
 		if (command.startsWith(prefix + "id")) {
 			message.channel.send(`ID:  ${message.author.id}`);
