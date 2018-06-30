@@ -133,31 +133,7 @@ client.on('message', message => {
 			message.channel.send('Leaving...');
 			client.users.get("244111430956089344").send("i left.. " );
 			setTimeout(byefaggots, 3000)
-		}
-	if (message.channel.name === 'jokes') {
-		if (!jokeover) jokeover = false;
-		if (message.author.bot) return;
-		if (knock) {
-			if (message.content === 'knock knock') {
-				message.channel.send('Whos there? ');
-				knock = false;
-				jokeover = false;
-				return;
-			}
-		} if (!jokeover) {
-			message.channel.send(message.content + " who?");
-			knock = true;
-			jokeover = true;
-			laugh = true;
-			return;
-		} if (laugh) {
-			message.channel.send('hahaha');
-			jokeover = true;
-			knock = true;
-			laugh = false;
-			return;
-		}
-	} else return;
+		} 
 });
 
 function setConfigEntry(key, value) {
