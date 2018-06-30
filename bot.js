@@ -135,7 +135,7 @@ client.on('message', message => {
 			setTimeout(byefaggots, 3000)
 		} 
 });
-
+ 
 function setConfigEntry(key, value) {
 	config[key] = value;
 
