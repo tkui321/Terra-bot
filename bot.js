@@ -145,4 +145,4 @@ function setConfigEntry(key, value) {
 	console.log('writing to ' + "./config.json");
 });
 }
-client.login(process.env.TOKEN);
+client.login(process.env.BOT_TOKEN);
